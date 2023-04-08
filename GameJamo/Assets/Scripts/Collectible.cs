@@ -5,50 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class Collectible: MonoBehaviour
 {
-    public int sayfa;
-    public int bomba;
-    public int mermi;
-    public int xp;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //public int sayfa;
+    //public int bomba;
+    //public int mermi;
+    //public int xp;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Sticker")
-        {
-            xp += 10;
-            Debug.Log(xp);
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "Sayfa")
-        {
-            sayfa += 1;
-            Debug.Log(sayfa);
-            Time.timeScale = 0;
-            Debug.Log("Bölüm bitti");
-            //SceneManager.LoadScene(1);
-            Debug.Log("Diðer sahneye geçti");
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "Mermi")
-        {
-            mermi += 1;
-            Debug.Log(mermi);            
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "Bomba")
-        {
-            xp += 10;
-            Debug.Log(xp);
-            Destroy(collision.gameObject);
-        }
-    }
+    //[SerializeField] Collider2D playerCollider;
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Stickers")))
+    //    {
+    //        xp += 10;
+    //        Debug.Log(xp);
+    //        Destroy(collision.gameObject);
+    //    }
+    //    if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Pages")))
+    //    {
+    //        sayfa += 1;
+    //        Debug.Log(sayfa);
+    //        Time.timeScale = 0;
+    //        Debug.Log("Bölüm bitti");
+    //        //SceneManager.LoadScene(1);
+    //        Debug.Log("Diðer sahneye geçti");
+    //        Destroy(collision.gameObject);
+    //    }
+    //    //if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Bullets")))
+    //    //{
+    //    //    mermi += 1;
+    //    //    Debug.Log(mermi);            
+    //    //    Destroy(collision.gameObject);
+    //    //}
+    //    if (collision.gameObject.tag == "Bomba")
+    //    {
+    //        xp += 10;
+    //        Debug.Log(xp);
+    //        Destroy(collision.gameObject);
+    //    }
+    //}
 }

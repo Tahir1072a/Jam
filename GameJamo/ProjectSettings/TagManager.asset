@@ -15,12 +15,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "Motivasyon Bombas\u0131"
+  - Bullets
+  - NPC
+  - Player
+  - Pages
+  - Stickers
   - 
   - 
   - 
@@ -44,4 +44,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backround
+    uniqueID: 3095351277
+    locked: 0
+  - name: GroundObjects
+    uniqueID: 205089885
+    locked: 0
+  - name: Enemies
+    uniqueID: 712135831
+    locked: 0
+  - name: Interactables
+    uniqueID: 3748709775
+    locked: 0
+  - name: NPC
+    uniqueID: 4185292421
+    locked: 0
+  - name: Bullets
+    uniqueID: 2868762223
+    locked: 0
+  - name: Player
+    uniqueID: 28696273
     locked: 0
