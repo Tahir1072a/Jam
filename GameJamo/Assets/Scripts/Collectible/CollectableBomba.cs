@@ -16,6 +16,7 @@ public class CollectableBomba : MonoBehaviour
         if (collider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             FindObjectOfType<GameManager>().IncreaseBombaNum();
+            Destroy(gameObject);
         }
     }
 }

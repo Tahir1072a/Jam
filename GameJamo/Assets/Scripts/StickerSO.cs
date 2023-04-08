@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StickerSO : MonoBehaviour
+[CreateAssetMenu(fileName ="Sticker",menuName ="StickerSO")]
+public class StickerSO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    //karakterin toplayabileceði ve aldýðý negatif etkileri tersine çeviren object tipleri.
+    public enum ElixirTypes
     {
-        
+        AntiDepresif,
+        AnsiSinir,
+        AntiStress,
+        AntiSadness,
+        AntiTired
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public ElixirTypes elixirType;
 }
