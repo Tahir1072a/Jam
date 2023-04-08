@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     Rigidbody2D rbPlayer;
     Vector2 moveInput;
 
-    [SerializeField] float moveSpeed = 5f;
+    public bool invert = false;
+
+    [SerializeField] public float moveSpeed = 5f;
 
 
     void Start()
@@ -17,12 +18,12 @@ public class PlayerMovement : MonoBehaviour
         rbPlayer = GetComponent<Rigidbody2D>();
     }
 
-
+    
     void FixedUpdate()
     {
         Move();
     }
-
+    
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -31,6 +32,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rbPlayer.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+        if (invert)
+        {
+            rbPlayer.velocity = new Vector2(moveInput.x * moveSpeed * -1f, moveInput.y * moveSpeed * -1f);
+        }
+        else
+        {
+            rbPlayer.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+        }
     }
 }

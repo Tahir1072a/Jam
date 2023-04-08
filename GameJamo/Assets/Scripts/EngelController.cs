@@ -5,47 +5,43 @@ using UnityEngine;
 public class EngelController : MonoBehaviour
 {
     PlayerMovement playerMovement;
-    public Transform karakter;
-    public int enerji;
+    public int energy;
 
-    // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
-        
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Sinirli")
+        Enemy enemyScript = collision.GetComponent<Enemy>();
+
+        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Sinirli)
         {
-            enerji = enerji - 10;
+            energy -= 10;
             Debug.Log("Ekran sallama kodu");
         }
-        if (collision.gameObject.tag == "Deli")
+        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Deli)
         {
-            enerji = enerji - 10;
-            Debug.Log("Ters yönde hareket kodu");
+            energy -= 10;
+            // Deli karakterin yÃ¶n tuÅŸlarÄ±nÄ± tersine Ã§evirir
+            playerMovement.invert = true;
         }
-        if (collision.gameObject.tag == "Uykulu")
+        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Uykulu)
         {
-            enerji = enerji - 10;
-            
-            Debug.Log("Karakterin hýzýný yarýya düþürme ve enerji 10 puan düþer ");
+            energy -= 10;
+            // Uykulu karakterin hÄ±zÄ±nÄ± yarÄ±ya dÃ¼ÅŸÃ¼rÃ¼r
+            playerMovement.moveSpeed /= 2f;
         }
-        if (collision.gameObject.tag == "Depresif")
+        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Depresif)
         {
-            enerji = enerji - 10;
-            Debug.Log("Ters yönde hareket kodu");
+            energy -= 50;
+            Debug.Log("Enerjiyi yariya dusurur / 50 puan duser");
         }
-        if (collision.gameObject.tag == "Mutsuz")
+        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Mutsuz)
         {
-            enerji = enerji - 10;
-            Debug.Log("Ateþ etme hýzý düþecek");
+            energy -= 10;
+            Debug.Log("Ates etme hizi dusecek");
         }
     }
 }
