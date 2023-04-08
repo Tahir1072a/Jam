@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
+    Animator animator;
     Vector2 moveInput;
 
     public bool invert = false;
@@ -16,12 +17,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     
     void FixedUpdate()
     {
         Move();
+        UpdateAnimate();
     }
     
     void OnMove(InputValue value)
@@ -39,6 +42,18 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rbPlayer.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+        }
+    }
+
+    void UpdateAnimate()
+    {
+        if(Mathf.Abs(moveInput.x) > Mathf.Epsilon || Mathf.Abs(moveInput.y) > Mathf.Epsilon)
+        {
+            animator.SetBool("isRun", true);
+        }
+        else
+        {
+            animator.SetBool("isRun", false);
         }
     }
 
