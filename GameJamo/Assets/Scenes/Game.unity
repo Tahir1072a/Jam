@@ -798,7 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1125096204}
-  moveSpeed: 3
+  enemySO: {fileID: 11400000, guid: b17249112cbea334f9d5fa03ab17020d, type: 2}
 --- !u!50 &1805358191
 Rigidbody2D:
   serializedVersion: 4

@@ -7,7 +7,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     public GameObject player;
 
-    [SerializeField] float moveSpeed = 3f;
+    [SerializeField] EnemySO enemySO;
+
+
 
     Rigidbody2D rbEnemy;
     Vector2 diff;
@@ -40,6 +42,6 @@ public class Enemy : MonoBehaviour
 
     void moveEnemy(Vector2 direction)
     {
-        rbEnemy.MovePosition((Vector2)this.transform.position + (direction * moveSpeed * Time.deltaTime));
+        rbEnemy.MovePosition((Vector2)this.transform.position + (direction * enemySO.speed * Time.deltaTime));
     }
 }
