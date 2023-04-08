@@ -49,7 +49,7 @@ public class IntroStory : MonoBehaviour
                 canavar.text = "Canavar";
                 break;
             case 4:
-                SceneManager.LoadScene(0);//buraya dikat düzeltilmeli kodda sýkýntý yok ama unitide bakýlmalý!!!
+                SceneManager.LoadScene(0);
                 break;
             default:
                 
