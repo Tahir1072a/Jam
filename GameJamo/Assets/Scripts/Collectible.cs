@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collectible: MonoBehaviour
 {
@@ -31,7 +32,14 @@ public class Collectible: MonoBehaviour
         {
             sayfa += 1;
             Debug.Log(sayfa);
+            Time.timeScale = 0;
             Debug.Log("Bölüm bitti");
+            if (Input.GetKey(KeyCode.KeypadEnter))
+            {
+                SceneManager.LoadScene(1);
+                Debug.Log("Diðer sahneye geçti");
+            }
+            Time.timeScale = 1;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Mermi")

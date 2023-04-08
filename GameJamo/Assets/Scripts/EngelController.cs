@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EngelController : MonoBehaviour
 {
-    public Transform nesne;
+    PlayerMovement playerMovement;
+    public Transform karakter;
     public int enerji;
 
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class EngelController : MonoBehaviour
         if (collision.gameObject.tag == "Uykulu")
         {
             enerji = enerji - 10;
+            
             Debug.Log("Karakterin hýzýný yarýya düþürme ve enerji 10 puan düþer ");
         }
         if (collision.gameObject.tag == "Depresif")
