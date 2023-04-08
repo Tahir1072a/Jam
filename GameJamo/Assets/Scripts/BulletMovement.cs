@@ -7,6 +7,7 @@ public class BulletMovement : MonoBehaviour
 {
     public Transform player, namlu,mermi,nokta;
     Transform klon;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +17,18 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-           klon= Instantiate(mermi, nokta.position, namlu.rotation);
-            klon.GetComponent<Rigidbody2D>().AddForce(klon.forward*100f);
-        }
+        
+       
+    }
+    void OnShoot()
+    {
+        Debug.Log("Space basýldý");
+        klon = Instantiate(mermi, nokta.position, namlu.rotation);
+        //klon.GetComponent<Rigidbody2D>().AddForce(klon.forward * 1000f);
+       
+        Rigidbody2D klonRigidbody = klon.GetComponent<Rigidbody2D>();
+        klon.GetComponent<Rigidbody2D>().AddForce(-namlu.right* 100f);
+        //klonRigidbody.AddForce(klon.transform.right * 10f);
+
     }
 }
