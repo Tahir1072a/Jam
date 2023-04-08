@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class CollectableBomba : MonoBehaviour
 {
-    Collider2D collider2D;
+    Collider2D collider2d;
 
     private void Start()
     {
-        collider2D = GetComponent<Collider2D>();
+        collider2d = GetComponent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
+        if (collider2d.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             FindObjectOfType<GameManager>().IncreaseBombaNum();
             Destroy(gameObject);

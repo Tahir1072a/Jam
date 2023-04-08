@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI pageText;
     [SerializeField] TextMeshProUGUI bulletText;
     [SerializeField] TextMeshProUGUI bombaText;
+    [SerializeField] Image enerygBar;
+
+    [SerializeField] float amountOfDamage = 0.1f;
     void Awake()
     {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -29,6 +33,11 @@ public class GameManager : MonoBehaviour
         UpdatePageView();
         UpdateBulletView();
         UpdateBombaView();
+    }
+    public void ReduceEnergy()
+    {
+
+        enerygBar.fillAmount -= amountOfDamage;
     }
     private void UpdatePageView()
     {
