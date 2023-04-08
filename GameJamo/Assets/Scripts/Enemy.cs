@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]
     public GameObject player;
 
     [SerializeField] public EnemySO enemySO;
@@ -15,6 +14,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
