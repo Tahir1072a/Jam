@@ -22,13 +22,11 @@ public class BulletMovement : MonoBehaviour
     }
     void OnShoot()
     {
-        Debug.Log("Space basýldý");
+        //Debug.Log("Space basýldý");
         klon = Instantiate(mermi, nokta.position, namlu.rotation);
-        //klon.GetComponent<Rigidbody2D>().AddForce(klon.forward * 1000f);
-       
         Rigidbody2D klonRigidbody = klon.GetComponent<Rigidbody2D>();
         klon.GetComponent<Rigidbody2D>().AddForce(-namlu.right* 100f);
-        //klonRigidbody.AddForce(klon.transform.right * 10f);
+      
 
     }
 }
