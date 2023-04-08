@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stick1er : MonoBehaviour
+public class Stickers : MonoBehaviour
 {
     [SerializeField] StickerSO stickerSO;
     Collider2D collider2D;
