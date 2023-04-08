@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Sticker",menuName ="StickerSO")]
 public class StickerSO : ScriptableObject
 {
-    //karakterin toplayabileceði ve aldýðý negatif etkileri tersine çeviren object tipleri.
+    //karakterin toplayabilecegi ve aldigi negatif etkileri tersine ceviren object tipleri.
     public enum ElixirTypes
     {
         AntiDepresif,
-        AnsiSinir,
+        AntiSinir,
         AntiStress,
         AntiSadness,
         AntiTired

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Stick1er : MonoBehaviour
 {
     [SerializeField] StickerSO stickerSO;
-    Collider2D collider2D;
+    Collider2D collider2d;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
+        if (collider2d.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             Destroy(gameObject);
         }

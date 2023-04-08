@@ -8,22 +8,10 @@ public class BulletMovement : MonoBehaviour
     public Transform player, namlu,mermi,nokta;
     Transform klon;
     [SerializeField] float bulletSpeed = 100f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-       
-    }
     void OnShoot()
     {
-        Debug.Log("Space basýldý");
+        Debug.Log("Space basildi");
         klon = Instantiate(mermi, nokta.position, namlu.rotation);
         //klon.GetComponent<Rigidbody2D>().AddForce(klon.forward * 1000f);
        
