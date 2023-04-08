@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     public GameObject player;
 
-    [SerializeField] EnemySO enemySO;
+    [SerializeField] public EnemySO enemySO;
 
 
 

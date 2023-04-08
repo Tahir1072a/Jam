@@ -11,7 +11,8 @@ public class EnemySO : ScriptableObject
         Sinirli,
         Yorgun,
         Depresif,
-        Mutsuz
+        Mutsuz,
+        Uykulu
     }
 
     [SerializeField] public float speed;
