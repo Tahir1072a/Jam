@@ -16,6 +16,7 @@ public class Page : MonoBehaviour
         if (collider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             FindObjectOfType<GameManager>().IncreasePageNum();
+            Destroy(gameObject);
         }
     }
 }
