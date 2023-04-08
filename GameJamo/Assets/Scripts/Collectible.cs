@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Collectible: MonoBehaviour
 {
-    public int point;
+    public int sayfa;
+    public int bomba;
+    public int mermi;
+    public int xp;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +21,29 @@ public class Collectible: MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Coin")
+        if (collision.gameObject.tag == "Sticker")
         {
-            point += 10;
-            Debug.Log(point);
+            xp += 10;
+            Debug.Log(xp);
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Sayfa")
+        {
+            sayfa += 1;
+            Debug.Log(sayfa);
+            Debug.Log("Bölüm bitti");
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Mermi")
+        {
+            mermi += 1;
+            Debug.Log(mermi);            
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Bomba")
+        {
+            xp += 10;
+            Debug.Log(xp);
             Destroy(collision.gameObject);
         }
     }
