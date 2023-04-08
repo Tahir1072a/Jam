@@ -34,12 +34,8 @@ public class Collectible: MonoBehaviour
             Debug.Log(sayfa);
             Time.timeScale = 0;
             Debug.Log("Bölüm bitti");
-            if (Input.GetKey(KeyCode.KeypadEnter))
-            {
-                SceneManager.LoadScene(1);
-                Debug.Log("Diðer sahneye geçti");
-            }
-            Time.timeScale = 1;
+            //SceneManager.LoadScene(1);
+            Debug.Log("Diðer sahneye geçti");
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Mermi")
