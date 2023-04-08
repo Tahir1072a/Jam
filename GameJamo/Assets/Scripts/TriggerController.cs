@@ -5,11 +5,13 @@ using UnityEngine;
 public class TriggerController : MonoBehaviour
 {
     PlayerMovement playerMovement;
+    GameManager gameManager;
     public int energy;
 
     void Start() 
     {
         playerMovement = GetComponent<PlayerMovement>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,6 +49,8 @@ public class TriggerController : MonoBehaviour
                     Debug.Log("Ates etme hizi dusecek");
                     break;
             }
+            playerMovement.animator.SetTrigger("isHurt");
+            gameManager.ReduceEnergy();
         }
 
         else if (collision.tag == "Sticker")
