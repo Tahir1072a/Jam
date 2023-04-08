@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu()]
-public class Stick1er : ScriptableObject
+public class Stick1er : MonoBehaviour
 {
-    public enum StickerType
+    [SerializeField] StickerSO stickerSO;
+    Collider2D collider2D;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        AntiSinir,
-        AntiStress,
-        AntiTired,
-        AntiSadness,
-        AntiDepresif
+        if (collider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
+        {
+            Destroy(gameObject);
+        }
     }
-
-    [SerializeField] StickerType stickerType;
-
 }

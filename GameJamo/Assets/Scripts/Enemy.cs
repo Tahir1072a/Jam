@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public EnemySO enemySO;
 
-
-
     Rigidbody2D rbEnemy;
     Vector2 diff;
 
