@@ -56,6 +56,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRun", false);
         }
     }
+    /// <summary>
+    /// Flip Spirte
+    /// </summary>
     void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(moveInput.x) > Mathf.Epsilon;
