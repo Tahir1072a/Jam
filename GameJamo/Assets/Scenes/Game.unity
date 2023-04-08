@@ -648,6 +648,63 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &561023856
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 672311474300254278, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
 --- !u!1 &691037475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1223,11 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!4 &814152956 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 672311474300254301, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
+  m_PrefabInstance: {fileID: 561023856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &944181372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,7 +1653,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 814152956}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -2074,7 +2136,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 814152956}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
