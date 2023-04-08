@@ -5,48 +5,85 @@ using UnityEngine;
 public class TriggerController : MonoBehaviour
 {
     PlayerMovement playerMovement;
+    GameManager gameManager;
     public int energy;
 
     void Start() 
     {
         playerMovement = GetComponent<PlayerMovement>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemyScript = collision.GetComponent<Enemy>();
+        if (collision.tag == "Enemy")
+        {
+            Enemy enemyScript = collision.GetComponent<Enemy>();
 
-        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Sinirli)
-        {
-            energy -= 10;
-            Debug.Log("Ekran sallama kodu");
-            Destroy(collision.gameObject);
+            switch (enemyScript.enemySO.enemyType)
+            {
+                case EnemySO.EnemyTypes.Sinirli:
+                    energy -= 10;
+                    Debug.Log("Ekran sallama kodu");
+                    break;
+
+                case EnemySO.EnemyTypes.Deli:
+                    energy -= 10;
+                    // Deli karakterin yön tuşlarını tersine çevirir
+                    playerMovement.invert = true;
+                    break;
+
+                case EnemySO.EnemyTypes.Uykulu:
+                    energy -= 10;
+                    // Uykulu karakterin hızını yarıya düşürür
+                    playerMovement.moveSpeed /= 2f;
+                    break;
+
+                case EnemySO.EnemyTypes.Depresif:
+                    energy -= 50;
+                    Debug.Log("Enerjiyi yariya dusurur / 50 puan duser");
+                    break;
+
+                case EnemySO.EnemyTypes.Mutsuz:
+                    energy -= 10;
+                    Debug.Log("Ates etme hizi dusecek");
+                    break;
+            }
+            playerMovement.animator.SetTrigger("isHurt");
+            gameManager.ReduceEnergy();
         }
-        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Deli)
+
+        else if (collision.tag == "Sticker")
         {
-            energy -= 10;
-            // Deli karakterin yön tuşlarını tersine çevirir
-            playerMovement.invert = true;
-            Destroy(collision.gameObject);
+            Sticker stickerScript = collision.GetComponent<Sticker>();
+
+            switch (stickerScript.stickerSO.elixirType)
+            {
+                case StickerSO.ElixirTypes.AntiSinir:
+                    Debug.Log("Ekran düzelme kodu");
+                    break;
+
+                case StickerSO.ElixirTypes.AntiStress:
+                    // AntiStress karakterin yön tuşlarını normale çevirir
+                    playerMovement.invert = false;
+                    break;
+
+                case StickerSO.ElixirTypes.AntiTired:
+                    // Uykulu karakterin hızını normale çevirir
+                    playerMovement.moveSpeed *= 2f;
+                    break;
+
+                case StickerSO.ElixirTypes.AntiDepresif:
+                    energy += 50;
+                    Debug.Log("Enerjiyi iki katina cikarir / 50 puan artar");
+                    break;
+
+                case StickerSO.ElixirTypes.AntiSadness:
+                    Debug.Log("Ates etme hizi normale donecek");
+                    break;
+            }
         }
-        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Uykulu)
-        {
-            energy -= 10;
-            // Uykulu karakterin hızını yarıya düşürür
-            playerMovement.moveSpeed /= 2f;
-            Destroy(collision.gameObject);
-        }
-        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Depresif)
-        {
-            energy -= 50;
-            Debug.Log("Enerjiyi yariya dusurur / 50 puan duser");
-            Destroy(collision.gameObject);
-        }
-        if (enemyScript.enemySO.enemyType == EnemySO.EnemyTypes.Mutsuz)
-        {
-            energy -= 10;
-            Debug.Log("Ates etme hizi dusecek");
-            Destroy(collision.gameObject);
-        }
+
+        Destroy(collision.gameObject);
     }
 }

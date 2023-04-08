@@ -5,12 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Enemy",menuName ="EnemySO")]
 public class EnemySO : ScriptableObject
 {
-    //Düþman Tipleri
+    //Dï¿½ï¿½man Tipleri
     public enum EnemyTypes
     {
         Deli,
         Sinirli,
-        Yorgun,
         Depresif,
         Mutsuz,
         Uykulu

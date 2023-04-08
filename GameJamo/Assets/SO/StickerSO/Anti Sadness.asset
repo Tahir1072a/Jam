@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c7f339e8d66f540a582621c47e8835, type: 3}
-  m_Name: Uykulu
+  m_Script: {fileID: 11500000, guid: 5ccbc6ce46ff06143a61abab70a99029, type: 3}
+  m_Name: Anti Sadness
   m_EditorClassIdentifier: 
-  speed: 2
-  enemyType: 5
+  elixirType: 3
