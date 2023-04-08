@@ -41,4 +41,9 @@ public class PlayerMovement : MonoBehaviour
             rbPlayer.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
         }
     }
+
+    void OnShoot()
+    {
+        Debug.Log("a");
+    }
 }

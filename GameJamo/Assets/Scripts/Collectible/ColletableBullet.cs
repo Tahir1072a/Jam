@@ -16,6 +16,7 @@ public class ColletableBullet : MonoBehaviour
         if (collider2D.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             FindObjectOfType<GameManager>().IncreaseBulletNum();
+            Destroy(gameObject);
         }
     }
 }
