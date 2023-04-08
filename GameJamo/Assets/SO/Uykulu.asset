@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c7f339e8d66f540a582621c47e8835, type: 3}
   m_Name: Uykulu
   m_EditorClassIdentifier: 
-  speed: 0
-  enemyType: 0
+  speed: 2
+  enemyType: 5
