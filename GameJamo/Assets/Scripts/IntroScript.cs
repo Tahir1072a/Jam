@@ -9,12 +9,26 @@ public class IntroScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI buttonText;
 
     private int basmaSayisi = 0;
-
+    SoundSource soundSource;
+    private void Awake()
+    {
+        soundSource = FindFirstObjectByType<SoundSource>();
+    }
+    private void Start()
+    {
+        soundSource.PlayMainMusic(MusicSO.AuidioTypes.MainStoryMusic);
+        Debug.Log(soundSource);
+    }
     public void OnClick()
     {
         Next();
+        soundSource.PlayPlayerMusic(MusicSO.AuidioTypes.ButtonClickSound);
     }
-
+    public void OnClickReStart()
+    {
+        SceneManager.LoadScene(0);
+        soundSource.PlayPlayerMusic(MusicSO.AuidioTypes.ButtonClickSound);
+    }
     void Next()
     {
         basmaSayisi++;
@@ -43,7 +57,7 @@ public class IntroScript : MonoBehaviour
                 buttonText.text = "Start";
                 break;
             case 4:
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(1);
                 break;
             default:
                 break;
