@@ -1050,7 +1050,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1594644087}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyunu kazanmak i\xE7in\n3 kitab\u0131 bulmal\u0131s\u0131n."
+  m_text: "Yava\u015F hareket ediyor.\nH\u0131z\u0131n\u0131 yar\u0131ya d\xFC\u015F\xFCr\xFCr."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
   m_sharedMaterial: {fileID: -5272684725201985703, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
@@ -1613,7 +1613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231, y: 34.000015}
+  m_AnchoredPosition: {x: -262, y: 34.000015}
   m_SizeDelta: {x: 184.8113, y: 184.8113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848744363
@@ -2134,7 +2134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -449.2, y: -45.1}
+  m_AnchoredPosition: {x: -420, y: -45.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052341837
@@ -2157,7 +2157,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyunu kazanmak i\xE7in\n3 kitab\u0131 bulmal\u0131s\u0131n."
+  m_text: "Y\xF6n tu\u015Flar\u0131n\u0131 tersine \xE7evirir. \nBu adama dikkat
+    et!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
   m_sharedMaterial: {fileID: -5272684725201985703, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
@@ -2220,7 +2221,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 8.078308, w: 0}
+  m_margin: {x: -50.965393, y: 0, z: 8.078308, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2566,7 +2567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: 34}
+  m_AnchoredPosition: {x: -23, y: 34}
   m_SizeDelta: {x: 184.81, y: 184.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212391155
@@ -2778,7 +2779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -449.2, y: -45.1}
+  m_AnchoredPosition: {x: -488, y: -45.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310917666
@@ -2801,7 +2802,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyunu kazanmak i\xE7in\n3 kitab\u0131 bulmal\u0131s\u0131n."
+  m_text: "Sana ula\u015F\u0131rsa ekran\u0131n titremeye ba\u015Flar.  Ka\xE7makta
+    ba\u015Far\u0131lar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
   m_sharedMaterial: {fileID: -5272684725201985703, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
@@ -2864,7 +2866,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 8.078308, w: 0}
+  m_margin: {x: 27.543213, y: 0, z: -69.04254, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3079,7 +3081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252, y: 33.700012}
+  m_AnchoredPosition: {x: 240, y: 33.700012}
   m_SizeDelta: {x: 185.4044, y: 185.4044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514607240
@@ -3738,7 +3740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyunu kazanmak i\xE7in\n3 kitab\u0131 bulmal\u0131s\u0131n."
+  m_text: "B\xFCy\xFCk enerji kaybettirir."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
   m_sharedMaterial: {fileID: -5272684725201985703, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
@@ -3846,11 +3848,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067348377}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -449.2, y: -45.1}
+  m_AnchoredPosition: {x: -432, y: -45.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774877319
@@ -3873,7 +3875,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyunu kazanmak i\xE7in\n3 kitab\u0131 bulmal\u0131s\u0131n."
+  m_text: "Ate\u015F h\u0131z\u0131n\u0131 yar\u0131ya d\xFC\u015F\xFCr\xFCr. Daha
+    yava\u015F ate\u015F edersin."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
   m_sharedMaterial: {fileID: -5272684725201985703, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
@@ -3936,7 +3939,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 8.078308, w: 0}
+  m_margin: {x: -54.21631, y: 0, z: 8.078308, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
