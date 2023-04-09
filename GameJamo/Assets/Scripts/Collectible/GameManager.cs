@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float amountOfDamage = 0.1f;
     public bool isDead = false;
+    bool control = true;
     void Awake()
     {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -40,9 +41,10 @@ public class GameManager : MonoBehaviour
     }
     private void Update() 
     {
-        if (pageNum == 3)
+        if (pageNum == 3 && control)
         {
-            this.LoadGameOverScene();
+            SceneManager.LoadSceneAsync(2);
+            control = false;
         }
     }
     public void ReduceEnergy()
