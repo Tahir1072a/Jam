@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Enemy",menuName ="EnemySO")]
 public class EnemySO : ScriptableObject
 {
-    //D��man Tipleri
+    //Dusman Tipleri
     public enum EnemyTypes
     {
         Deli,
@@ -16,6 +16,8 @@ public class EnemySO : ScriptableObject
     }
 
     [SerializeField] public float speed;
+
+    [SerializeField] public float deathSpeed;
 
     [SerializeField] public EnemyTypes enemyType;
 }

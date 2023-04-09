@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 520869393288873803}
   - component: {fileID: 520869393288873802}
   - component: {fileID: 520869393288873805}
-  - component: {fileID: 520869393288873804}
+  - component: {fileID: 1893974634412935818}
   - component: {fileID: 520869393288873807}
-  m_Layer: 0
+  - component: {fileID: -7190048742411478268}
+  m_Layer: 8
   m_Name: Depresif
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -73,11 +74,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -109674875
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.3301887, g: 0.2538715, b: 0.2538715, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f10587d4155424991a2e47abdc5a5e56, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,14 +103,14 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &520869393288873804
-PolygonCollider2D:
+  m_Constraints: 4
+--- !u!70 &1893974634412935818
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,24 +119,12 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+  m_Offset: {x: -0.022512436, y: -0.15008307}
+  m_Size: {x: 1.0639277, y: 1.7693186}
+  m_Direction: 0
 --- !u!114 &520869393288873807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,5 +137,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9006566cd007d947b5c3fb093e3a336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 672311474300254278, guid: b17a65a0a76f0e74899cf13b34119c89, type: 3}
   enemySO: {fileID: 11400000, guid: aa172a261a948d54bb728ce3862c8d70, type: 2}
+--- !u!95 &-7190048742411478268
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520869393288873806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b7292afc4b3ee54e8fa591861e1a8dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
