@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Deli
   m_EditorClassIdentifier: 
   speed: 3
+  deathSpeed: 1.5
   enemyType: 0

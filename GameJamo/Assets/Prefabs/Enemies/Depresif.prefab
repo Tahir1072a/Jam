@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 520869393288873805}
   - component: {fileID: 520869393288873804}
   - component: {fileID: 520869393288873807}
+  - component: {fileID: -7190048742411478268}
   m_Layer: 0
   m_Name: Depresif
   m_TagString: Enemy
@@ -149,3 +150,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySO: {fileID: 11400000, guid: aa172a261a948d54bb728ce3862c8d70, type: 2}
+--- !u!95 &-7190048742411478268
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520869393288873806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private GameObject player;
+    Animator animator;
+
+    bool isDead = false;
 
     [SerializeField] public EnemySO enemySO;
 
@@ -14,14 +17,19 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
     void FixedUpdate()
     {
-        calculateMovement();
-        moveEnemy(diff);
+        if (!isDead)
+        {
+            calculateMovement();
+            moveEnemy(diff);
+            flipSprite(diff);
+        }
     }
 
     Vector2 calculateDifference(Transform p)
@@ -33,13 +41,24 @@ public class Enemy : MonoBehaviour
     {
         diff = calculateDifference(player.transform);
 
-        rbEnemy.rotation = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-
         diff.Normalize();
     }
 
     void moveEnemy(Vector2 direction)
     {
-        rbEnemy.MovePosition((Vector2)this.transform.position + (direction * enemySO.speed * Time.deltaTime));
+        rbEnemy.velocity = direction * enemySO.speed;
     }
+
+    void flipSprite(Vector2 dir)
+    {
+        transform.localScale = new Vector2(Mathf.Sign(dir.x), transform.localScale.y);
+    }
+
+    public void enemyDead()
+    {
+        isDead = true;
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, enemySO.deathSpeed);
+    }
+
 }

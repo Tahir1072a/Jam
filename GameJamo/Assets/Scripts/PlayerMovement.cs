@@ -72,8 +72,4 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    void OnShoot()
-    {
-        Debug.Log("a");
-    }
 }
