@@ -1,23 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
-    public Animator animator;
+    [HideInInspector]public Animator animator;
     Vector2 moveInput;
-
+    [Header("Fire")]
+    public Transform mermi, nokta;
+    [SerializeField] float fireDelay;
+    float fireTimer;
+    public float timerMultiplier = 1f;
+    Transform klonBullet;
+    [Header("Movement")]
     public bool invert = false;
-
     [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] float bulletSpeed = 1f;
 
+    PlayerInput playerInput;
+    GameManager gameManager;
+    Camera mainCamera;
 
+    float xSpeed;
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerInput = GetComponent<PlayerInput>();
+        gameManager = FindAnyObjectByType<GameManager>();
+        mainCamera = Camera.main;
+        fireTimer = fireDelay;
     }
     void FixedUpdate()
     {
@@ -27,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     {
         FlipSprite();
         UpdateAnimate();
+        Die();
+        ConfigureFireDelay();
     }
     void OnMove(InputValue value)
     {
@@ -56,6 +73,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRun", false);
         }
     }
+    /// <summary>
+    /// Flip Spirte
+    /// </summary>
     void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(moveInput.x) > Mathf.Epsilon;
@@ -72,8 +92,44 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    public void Die()
+    {
+        if(!gameManager.isDead)
+        {
+            return;
+        }
+        gameManager.isDead = false;
+        gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.DieSound);
+        animator.SetTrigger("isDead");
+        playerInput.DeactivateInput();
+        Invoke("LoadGameOverScene", 3f);
+    }
+    void LoadGameOverScene()
+    {
+        gameManager.LoadGameOverScene();
+    }
+    void ConfigureFireDelay()
+    {
+        gameManager.UpdateViewReloadImage(fireDelay,timerMultiplier);
+    }
     void OnShoot()
     {
-        Debug.Log("a");
+        if(gameManager.reloadImage.fillAmount < 1)
+        {
+            return;
+        }
+        animator.SetTrigger("isFire");
+        gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.FireSound);
+        klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePosition.z = 0;
+        Vector2 shootingDirection = (mousePosition - nokta.position).normalized;
+        if(shootingDirection.normalized.x != transform.localScale.x)
+        {
+            shootingDirection.x = transform.localScale.x;
+        }
+        klonBullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
+        fireTimer = fireDelay;
+        gameManager.UpdateViewReloadImage();
     }
 }

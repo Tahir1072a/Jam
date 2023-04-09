@@ -1,22 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static MusicSO;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Oyuncu Çantasý")]
     [SerializeField] short pageNum;
-    [SerializeField] short bulletNum;
     [SerializeField] short bombaNum;
     [Header("UI")]
     [SerializeField] TextMeshProUGUI pageText;
-    [SerializeField] TextMeshProUGUI bulletText;
     [SerializeField] TextMeshProUGUI bombaText;
     [SerializeField] Image enerygBar;
+    [SerializeField] public Image reloadImage;
+    [Header("AudioSources")]
+    [SerializeField] AudioSource mainMusicSource;
+    [SerializeField] AudioSource playerMusicSource;
+    [SerializeField] MusicSO musics;
 
     [SerializeField] float amountOfDamage = 0.1f;
+    public bool isDead = false;
     void Awake()
     {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -31,21 +38,35 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdatePageView();
-        UpdateBulletView();
         UpdateBombaView();
     }
     public void ReduceEnergy()
     {
-
         enerygBar.fillAmount -= amountOfDamage;
+        if (enerygBar.fillAmount <= 0)
+        {
+            isDead = true;
+        }
+    }
+    public void ReduceEnergy(float amountDamage)
+    {
+        enerygBar.fillAmount -= amountDamage;
+        if(enerygBar.fillAmount <= 0)
+        {
+            isDead = true;
+        }
+    }
+    public void IncreaseEnergy(float amountOfHeal)
+    {
+        if(enerygBar.fillAmount == 1)
+        {
+            return;
+        }
+        enerygBar.fillAmount += amountOfHeal;
     }
     private void UpdatePageView()
     {
         pageText.text = pageNum.ToString();
-    }
-    public void UpdateBulletView()
-    {
-        bulletText.text = bulletNum.ToString();
     }
     public void UpdateBombaView()
     {
@@ -56,14 +77,42 @@ public class GameManager : MonoBehaviour
         pageNum++;
         UpdatePageView();
     }
-    public void IncreaseBulletNum()
-    {
-        bulletNum++;
-        UpdateBulletView();
-    }
     public void IncreaseBombaNum()
     {
         bombaNum++;
         UpdateBombaView();
+    }
+    public void ReduceBombNum()
+    {
+        bombaNum--;
+        UpdateBombaView();
+    }
+    public short ShowPageNum()
+    {
+        return pageNum;
+    }
+    public short ShowBombNum()
+    {
+        return bombaNum;
+    }
+    public void PlayPlayerMusic(MusicSO.AuidioTypes auidioType)
+    {
+       // playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips);
+    }
+    public void PlayMainMusic(MusicSO.AuidioTypes audioType)
+    {
+       // mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips);
+    }
+    public void LoadGameOverScene()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void UpdateViewReloadImage(float delayTime,float timerMultiplier)
+    {
+        reloadImage.fillAmount += (1 / delayTime) * Time.deltaTime * timerMultiplier;
+    }
+    public void UpdateViewReloadImage()
+    {
+        reloadImage.fillAmount = 0;
     }
 }

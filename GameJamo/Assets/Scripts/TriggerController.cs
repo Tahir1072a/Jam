@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using System.Linq;
 
+//Karakterin trigger olaylarını düzenelr
 public class TriggerController : MonoBehaviour
 {
+
     PlayerMovement playerMovement;
     GameManager gameManager;
-    public int energy;
 
     void Start() 
     {
@@ -23,33 +26,34 @@ public class TriggerController : MonoBehaviour
             switch (enemyScript.enemySO.enemyType)
             {
                 case EnemySO.EnemyTypes.Sinirli:
-                    energy -= 10;
-                    Debug.Log("Ekran sallama kodu");
+                    CinemachineController.Instance.startShake();
                     break;
 
                 case EnemySO.EnemyTypes.Deli:
-                    energy -= 10;
                     // Deli karakterin yön tuşlarını tersine çevirir
                     playerMovement.invert = true;
                     break;
 
                 case EnemySO.EnemyTypes.Uykulu:
-                    energy -= 10;
                     // Uykulu karakterin hızını yarıya düşürür
                     playerMovement.moveSpeed /= 2f;
                     break;
 
                 case EnemySO.EnemyTypes.Depresif:
-                    energy -= 50;
-                    Debug.Log("Enerjiyi yariya dusurur / 50 puan duser");
+                    //Karakterin toplam enerjisi 1 olduğu için onu 0.2 azaltır.
+                    gameManager.ReduceEnergy(0.2f);
                     break;
 
                 case EnemySO.EnemyTypes.Mutsuz:
-                    energy -= 10;
-                    Debug.Log("Ates etme hizi dusecek");
+                    playerMovement.timerMultiplier = 0.5f;
                     break;
             }
+
+            collision.GetComponent<Enemy>().enemyDead();
+            
             playerMovement.animator.SetTrigger("isHurt");
+            gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.HurtSound);
+            //Her kötü olay karakterin canını 0.1 azaltır. Not: Karakterin enerji miktarı 1 dir.
             gameManager.ReduceEnergy();
         }
 
@@ -60,7 +64,7 @@ public class TriggerController : MonoBehaviour
             switch (stickerScript.stickerSO.elixirType)
             {
                 case StickerSO.ElixirTypes.AntiSinir:
-                    Debug.Log("Ekran düzelme kodu");
+                    CinemachineController.Instance.endShake();
                     break;
 
                 case StickerSO.ElixirTypes.AntiStress:
@@ -70,20 +74,25 @@ public class TriggerController : MonoBehaviour
 
                 case StickerSO.ElixirTypes.AntiTired:
                     // Uykulu karakterin hızını normale çevirir
-                    playerMovement.moveSpeed *= 2f;
+                    if(playerMovement.moveSpeed == 2.5f)
+                    {
+                        playerMovement.moveSpeed *= 2f;
+                    }
                     break;
 
                 case StickerSO.ElixirTypes.AntiDepresif:
-                    energy += 50;
-                    Debug.Log("Enerjiyi iki katina cikarir / 50 puan artar");
+                    // Energy miktarını 0.2 artırır.
+                    gameManager.IncreaseEnergy(0.2f);
                     break;
 
                 case StickerSO.ElixirTypes.AntiSadness:
-                    Debug.Log("Ates etme hizi normale donecek");
+                    playerMovement.timerMultiplier = 1f;
                     break;
             }
+            gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.ElixirSound);
+            Destroy(collision.gameObject);
         }
 
-        Destroy(collision.gameObject);
+        
     }
 }
