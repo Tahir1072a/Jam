@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+
 //Karakterin trigger olaylarını düzenelr
 public class TriggerController : MonoBehaviour
 {
+
     PlayerMovement playerMovement;
     GameManager gameManager;
 
@@ -22,7 +25,7 @@ public class TriggerController : MonoBehaviour
             switch (enemyScript.enemySO.enemyType)
             {
                 case EnemySO.EnemyTypes.Sinirli:
-                    Debug.Log("Ekran sallama kodu");
+                    CinemachineController.Instance.startShake();
                     break;
 
                 case EnemySO.EnemyTypes.Deli:
@@ -60,7 +63,7 @@ public class TriggerController : MonoBehaviour
             switch (stickerScript.stickerSO.elixirType)
             {
                 case StickerSO.ElixirTypes.AntiSinir:
-                    Debug.Log("Ekran düzelme kodu");
+                    CinemachineController.Instance.endShake();
                     break;
 
                 case StickerSO.ElixirTypes.AntiStress:
