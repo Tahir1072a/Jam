@@ -107,9 +107,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-    public void UpdateViewReloadImage(float delayTime)
+    public void UpdateViewReloadImage(float delayTime,float timerMultiplier)
     {
-        reloadImage.fillAmount += (1 / delayTime) * Time.deltaTime;
+        reloadImage.fillAmount += (1 / delayTime) * Time.deltaTime * timerMultiplier;
     }
     public void UpdateViewReloadImage()
     {

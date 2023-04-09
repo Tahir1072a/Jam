@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform mermi, nokta;
     [SerializeField] float fireDelay;
     float fireTimer;
+    public float timerMultiplier = 1f;
     Transform klonBullet;
     [Header("Movement")]
     public bool invert = false;
@@ -110,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
     void ConfigureFireDelay()
     {
         fireTimer -= Time.deltaTime;
-        gameManager.UpdateViewReloadImage(fireDelay);
+        gameManager.UpdateViewReloadImage(fireDelay,timerMultiplier);
     }
     void OnShoot()
     {
