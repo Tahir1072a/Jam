@@ -45,12 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pageNum: 0
-  bulletNum: 0
   bombaNum: 0
   pageText: {fileID: 0}
-  bulletText: {fileID: 0}
   bombaText: {fileID: 0}
   enerygBar: {fileID: 0}
+  reloadImage: {fileID: 0}
   mainMusicSource: {fileID: 0}
   playerMusicSource: {fileID: 0}
   musics: {fileID: 11400000, guid: 3792b8d8dabb683408554795a11bca6a, type: 2}
