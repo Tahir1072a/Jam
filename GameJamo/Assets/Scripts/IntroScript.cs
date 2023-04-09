@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 public class IntroScript : MonoBehaviour
 {
     public TextMeshProUGUI mainText;
+    public PlayerInput playerInput;
     
     private int basmaSayisi = 0;
     // Start is called before the first frame update
+    
     void Start()
     {
         
