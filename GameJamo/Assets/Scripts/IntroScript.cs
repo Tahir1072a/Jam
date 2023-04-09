@@ -58,10 +58,10 @@ public class IntroScript : MonoBehaviour
         }
         for (int i = 0; i < basmaSayisi; i++)
         {
-            panels[i].enabled = true;
+            panels[i].gameObject.SetActive(true);
             if (i > 0)
             {
-                panels[i - 1].enabled = false;
+                panels[i - 1].gameObject.SetActive(false);
             }
         }
     }
