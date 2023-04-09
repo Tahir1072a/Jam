@@ -86,4 +86,26 @@ public class GameManager : MonoBehaviour
         bombaNum++;
         UpdateBombaView();
     }
+    public void ReduceBulletNum()
+    {
+        bulletNum--;
+        UpdateBulletView();
+    }
+    public void ReduceBombNum()
+    {
+        bombaNum--;
+        UpdateBombaView();
+    }
+    public short ShowBulletNum()
+    {
+        return bulletNum;
+    }
+    public short ShowPageNum()
+    {
+        return pageNum;
+    }
+    public short ShowBombNum()
+    {
+        return bombaNum;
+    }
 }

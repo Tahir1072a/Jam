@@ -99,6 +99,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnShoot()
     {
+        if(gameManager.ShowBulletNum() == 0)
+        {
+            return;
+        }
         animator.SetTrigger("isFire");
         klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -109,6 +113,6 @@ public class PlayerMovement : MonoBehaviour
             shootingDirection.x = transform.localScale.x;
         }
         klonBullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
-
+        gameManager.ReduceBulletNum();
     }
 }
