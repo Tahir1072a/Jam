@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI pageText;
     [SerializeField] TextMeshProUGUI bombaText;
     [SerializeField] Image enerygBar;
+    [SerializeField] Image reloadImage;
     [Header("AudioSources")]
     [SerializeField] AudioSource mainMusicSource;
     [SerializeField] AudioSource playerMusicSource;
@@ -105,5 +106,13 @@ public class GameManager : MonoBehaviour
     public void LoadGameOverScene()
     {
         SceneManager.LoadScene(2);
+    }
+    public void UpdateViewReloadImage(float delayTime,float timerMultiplier)
+    {
+        reloadImage.fillAmount += (1 / delayTime) * Time.deltaTime * timerMultiplier;
+    }
+    public void UpdateViewReloadImage()
+    {
+        reloadImage.fillAmount = 0;
     }
 }

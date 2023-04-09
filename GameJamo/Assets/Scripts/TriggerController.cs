@@ -45,7 +45,7 @@ public class TriggerController : MonoBehaviour
                     break;
 
                 case EnemySO.EnemyTypes.Mutsuz:
-                    Debug.Log("Ates etme hizi dusecek");
+                    playerMovement.timerMultiplier = 0.5f;
                     break;
             }
 
@@ -86,7 +86,7 @@ public class TriggerController : MonoBehaviour
                     break;
 
                 case StickerSO.ElixirTypes.AntiSadness:
-                    Debug.Log("Ates etme hizi normale donecek");
+                    playerMovement.timerMultiplier = 1f;
                     break;
             }
             gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.ElixirSound);
