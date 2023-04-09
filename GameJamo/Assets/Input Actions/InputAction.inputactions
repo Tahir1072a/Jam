@@ -98,7 +98,7 @@
             "id": "560eb346-9a8e-459a-ae09-d6232c716fba",
             "actions": [
                 {
-                    "name": "Click",
+                    "name": "ButtonClick",
                     "type": "PassThrough",
                     "id": "bb1fc9e8-b2fd-4ab0-bbcc-55d66bbd598d",
                     "expectedControlType": "Button",
@@ -115,18 +115,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "keyboard",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2fecc7f9-a14a-4651-8cfa-744367f75a99",
-                    "path": "<Pen>/barrel1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
+                    "action": "ButtonClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
