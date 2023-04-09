@@ -13,7 +13,6 @@ public class MusicSO : ScriptableObject
         ButtonClickSound,
         DieSound,
         FireSound,
-        BUlletCollectSound,
         MainStoryMusic,
         MainGameMusic,
         BombCollectSound,

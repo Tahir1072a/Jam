@@ -10,7 +10,6 @@ public class BulletControl : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            FindAnyObjectByType<GameManager>().PlayPlayerMusic(MusicSO.AuidioTypes.BUlletCollectSound);
             collision.GetComponent<Enemy>().enemyDead();
             Destroy(gameObject);
         }
