@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 1053110212}
   m_Layer: 5
   m_Name: Point
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -944,6 +944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainText: {fileID: 0}
   buttonText: {fileID: 0}
+  puanText: {fileID: 0}
+  panels: []
 --- !u!114 &1259082951
 MonoBehaviour:
   m_ObjectHideFlags: 0
