@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Karakterin trigger olaylarını düzenelr
 public class TriggerController : MonoBehaviour
 {
     PlayerMovement playerMovement;
