@@ -49,14 +49,14 @@ TagManager:
   - name: Backround
     uniqueID: 3095351277
     locked: 0
+  - name: Interactables
+    uniqueID: 3748709775
+    locked: 0
   - name: GroundObjects
     uniqueID: 205089885
     locked: 0
   - name: Enemies
     uniqueID: 712135831
-    locked: 0
-  - name: Interactables
-    uniqueID: 3748709775
     locked: 0
   - name: NPC
     uniqueID: 4185292421

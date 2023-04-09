@@ -7,28 +7,28 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
-
-    [Header("Animator")]
-    public Animator animator;
+    [HideInInspector]public Animator animator;
     Vector2 moveInput;
     [Header("Fire")]
-    public Transform namlu, mermi, nokta;
+    public Transform mermi, nokta;
     Transform klonBullet;
-    [SerializeField] float bulletSpeed = 100f;
     [Header("Movement")]
     public bool invert = false;
     [SerializeField] public float moveSpeed = 5f;
-
+    [SerializeField] float bulletSpeed = 1f;
 
     PlayerInput playerInput;
     GameManager gameManager;
+    Camera mainCamera;
 
+    float xSpeed;
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         gameManager = FindAnyObjectByType<GameManager>();
+        mainCamera = Camera.main;
     }
     void FixedUpdate()
     {
@@ -99,13 +99,20 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnShoot()
     {
+        if(gameManager.ShowBulletNum() == 0)
+        {
+            return;
+        }
         animator.SetTrigger("isFire");
-        Debug.Log("Space basildi");
         klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
-        //klon.GetComponent<Rigidbody2D>().AddForce(klon.forward * 1000f);
-
-        Rigidbody2D klonRigidbody = klonBullet.GetComponent<Rigidbody2D>();
-        klonBullet.GetComponent<Rigidbody2D>().AddForce(transform.localScale.x * bulletSpeed * Vector2.one);
-        //klonRigidbody.AddForce(klon.transform.right * 10f);
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePosition.z = 0;
+        Vector2 shootingDirection = (mousePosition - nokta.position).normalized;
+        if(shootingDirection.normalized.x != transform.localScale.x)
+        {
+            shootingDirection.x = transform.localScale.x;
+        }
+        klonBullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
+        gameManager.ReduceBulletNum();
     }
 }
