@@ -25,7 +25,7 @@ public class LoginScreenScript : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
     }

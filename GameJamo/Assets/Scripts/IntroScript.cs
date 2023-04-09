@@ -55,7 +55,7 @@ public class IntroScript : MonoBehaviour
                      "duygularýna kapýlma yoksa bulamazsýn";
                 break;
             case 4:
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(2);
                 break;
             default:
                 break;
