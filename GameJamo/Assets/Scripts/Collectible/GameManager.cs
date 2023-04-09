@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image enerygBar;
 
     [SerializeField] float amountOfDamage = 0.1f;
+    public bool isDead = false;
     void Awake()
     {
         if (FindObjectsOfType<GameManager>().Length > 1)
@@ -36,8 +37,27 @@ public class GameManager : MonoBehaviour
     }
     public void ReduceEnergy()
     {
-
         enerygBar.fillAmount -= amountOfDamage;
+        if (enerygBar.fillAmount <= 0)
+        {
+            isDead = true;
+        }
+    }
+    public void ReduceEnergy(float amountDamage)
+    {
+        enerygBar.fillAmount -= amountDamage;
+        if(enerygBar.fillAmount <= 0)
+        {
+            isDead = true;
+        }
+    }
+    public void IncreaseEnergy(float amountOfHeal)
+    {
+        if(enerygBar.fillAmount == 1)
+        {
+            return;
+        }
+        enerygBar.fillAmount += amountOfHeal;
     }
     private void UpdatePageView()
     {
