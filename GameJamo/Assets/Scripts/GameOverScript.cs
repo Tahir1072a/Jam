@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using static UnityEngine.InputSystem.HID.HID;
 
 public class GameOverScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Button button;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
+
     void Update()
     {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            Next();
+        }
         
+    }
+    void Next()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(0);
+        }
+           
     }
 }
