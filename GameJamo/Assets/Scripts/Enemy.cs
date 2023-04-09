@@ -12,12 +12,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] public EnemySO enemySO;
 
     Rigidbody2D rbEnemy;
+    CapsuleCollider2D capsCollider;
     Vector2 diff;
 
     void Start()
     {
         rbEnemy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        capsCollider = GetComponent<CapsuleCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -58,6 +60,7 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("isDead", true);
+        capsCollider.enabled = false;
         Destroy(gameObject, enemySO.deathSpeed);
     }
 
