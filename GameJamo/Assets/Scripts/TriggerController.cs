@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Karakterin trigger olaylarını düzenelr
 public class TriggerController : MonoBehaviour
 {
     PlayerMovement playerMovement;
     GameManager gameManager;
-    public int energy;
 
     void Start() 
     {
@@ -23,29 +22,25 @@ public class TriggerController : MonoBehaviour
             switch (enemyScript.enemySO.enemyType)
             {
                 case EnemySO.EnemyTypes.Sinirli:
-                    energy -= 10;
                     Debug.Log("Ekran sallama kodu");
                     break;
 
                 case EnemySO.EnemyTypes.Deli:
-                    energy -= 10;
                     // Deli karakterin yön tuşlarını tersine çevirir
                     playerMovement.invert = true;
                     break;
 
                 case EnemySO.EnemyTypes.Uykulu:
-                    energy -= 10;
                     // Uykulu karakterin hızını yarıya düşürür
                     playerMovement.moveSpeed /= 2f;
                     break;
 
                 case EnemySO.EnemyTypes.Depresif:
-                    energy -= 50;
-                    Debug.Log("Enerjiyi yariya dusurur / 50 puan duser");
+                    //Karakterin toplam enerjisi 1 olduğu için onu 0.2 azaltır.
+                    gameManager.ReduceEnergy(0.2f);
                     break;
 
                 case EnemySO.EnemyTypes.Mutsuz:
-                    energy -= 10;
                     Debug.Log("Ates etme hizi dusecek");
                     break;
             }
@@ -54,6 +49,7 @@ public class TriggerController : MonoBehaviour
             
 
             playerMovement.animator.SetTrigger("isHurt");
+            //Her kötü olay karakterin canını 0.1 azaltır. Not: Karakterin enerji miktarı 1 dir.
             gameManager.ReduceEnergy();
         }
 
@@ -74,12 +70,15 @@ public class TriggerController : MonoBehaviour
 
                 case StickerSO.ElixirTypes.AntiTired:
                     // Uykulu karakterin hızını normale çevirir
-                    playerMovement.moveSpeed *= 2f;
+                    if(playerMovement.moveSpeed == 2.5f)
+                    {
+                        playerMovement.moveSpeed *= 2f;
+                    }
                     break;
 
                 case StickerSO.ElixirTypes.AntiDepresif:
-                    energy += 50;
-                    Debug.Log("Enerjiyi iki katina cikarir / 50 puan artar");
+                    // Energy miktarını 0.2 artırır.
+                    gameManager.IncreaseEnergy(0.2f);
                     break;
 
                 case StickerSO.ElixirTypes.AntiSadness:
