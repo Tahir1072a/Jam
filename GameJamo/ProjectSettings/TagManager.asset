@@ -9,6 +9,8 @@ TagManager:
   - Bomba
   - Sticker
   - Enemy
+  - StoryMusic
+  - PlayerMusic
   layers:
   - Default
   - TransparentFX
