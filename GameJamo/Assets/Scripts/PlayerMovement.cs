@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     [Header("Fire")]
     public Transform mermi, nokta;
+    [SerializeField] float fireDelay;
+    float fireTimer;
     Transform klonBullet;
     [Header("Movement")]
     public bool invert = false;
@@ -21,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
     GameManager gameManager;
     Camera mainCamera;
 
- 
-
     float xSpeed;
     void Start()
     {
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         gameManager = FindAnyObjectByType<GameManager>();
         mainCamera = Camera.main;
+        fireTimer = fireDelay;
     }
     void FixedUpdate()
     {
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         UpdateAnimate();
         Die();
+        ConfigureFireDelay();
     }
     void OnMove(InputValue value)
     {
@@ -105,8 +107,17 @@ public class PlayerMovement : MonoBehaviour
     {
         gameManager.LoadGameOverScene();
     }
+    void ConfigureFireDelay()
+    {
+        fireTimer -= Time.deltaTime;
+        gameManager.UpdateViewReloadImage(fireDelay);
+    }
     void OnShoot()
     {
+        if(fireTimer > Mathf.Epsilon)
+        {
+            return;
+        }
         animator.SetTrigger("isFire");
         gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.FireSound);
         klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
@@ -118,5 +129,7 @@ public class PlayerMovement : MonoBehaviour
             shootingDirection.x = transform.localScale.x;
         }
         klonBullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
+        fireTimer = fireDelay;
+        gameManager.UpdateViewReloadImage();
     }
 }
