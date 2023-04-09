@@ -1,33 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using static UnityEngine.InputSystem.HID.HID;
+using UnityEngine.UI;
 
 public class IntroScript : MonoBehaviour
 {
     public TextMeshProUGUI mainText;
+    [SerializeField] TextMeshProUGUI buttonText;
 
-    public Button button; 
     private int basmaSayisi = 0;
-    // Start is called before the first frame update
-    
-    void Start()
+    SoundSource soundSource;
+    private void Awake()
     {
-        
+        soundSource = FindFirstObjectByType<SoundSource>();
     }
-
-    // Update is called once per frame
-    private void Update()
+    private void Start()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Next();
-        }
+        soundSource.PlayMainMusic(MusicSO.AuidioTypes.MainStoryMusic);
+        Debug.Log(soundSource);
     }
-
+    public void OnClick()
+    {
+        Next();
+        soundSource.PlayPlayerMusic(MusicSO.AuidioTypes.ButtonClickSound);
+    }
+    public void OnClickReStart()
+    {
+        SceneManager.LoadScene(0);
+        soundSource.PlayPlayerMusic(MusicSO.AuidioTypes.ButtonClickSound);
+    }
     void Next()
     {
         basmaSayisi++;
@@ -37,19 +38,26 @@ public class IntroScript : MonoBehaviour
         {
             case 1:
                 
-                mainText.text = 
-                    "Ho? geldin! Akademi boyunca motivasyonunu etkileyen zorluklar ya??yor musun? Cevab?n evetse, bu oyunda sana ihtiyac?m?z var. Biliyoruz, k?t? duygular senin motivasyonunu etkiliyor ve ba?ar?na engel oluyor. ";
+                mainText.text = "Hikaye" +
+                    "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
+                     "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
+                     "duygularýna kapýlma yoksa bulamazsýn";
                 break;
             case 2:
-                mainText.text = 
-                    "Oyunda seni zorlu bir yolculuk bekliyor. Yapman gereken, sana zarar vermek i?in etrafta dola?an bu k?t? duygularla sava?mak ve motivasyonunu y?ksek tutarak Akademi'deki ?? kitab? bulmak!";
+                mainText.text = "Oynanýþ" +
+                    "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
+                     "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
+                     "duygularýna kapýlma yoksa bulamazsýn";
                 break;
             case 3:
-                mainText.text = 
-                    "Ba?ar?l? olmak i?in cesaretin ve g??l? bir motivasyonun olmas? gerekiyor. Unutma, her ba?ar? seni daha da g??l? k?lacak ve motivasyonunu art?racak. Sen de bu zorlu m?cadeleyi kazanmak i?in haz?rsan, haydi ba?layal?m!";
+                mainText.text = "Canavar" +
+                    "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
+                     "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
+                     "duygularýna kapýlma yoksa bulamazsýn";
+                buttonText.text = "Start";
                 break;
             case 4:
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
                 break;
             default:
                 break;
