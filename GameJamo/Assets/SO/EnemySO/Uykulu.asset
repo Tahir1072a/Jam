@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Uykulu
   m_EditorClassIdentifier: 
   speed: 2
+  deathSpeed: 1.2
   enemyType: 4
