@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5523354274858932931}
   - component: {fileID: 520869393288873807}
   - component: {fileID: 2581404529337744908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sinirli
   m_TagString: Enemy
   m_Icon: {fileID: 0}

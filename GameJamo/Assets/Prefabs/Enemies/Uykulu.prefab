@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1045771218004305295}
   - component: {fileID: 520869393288873807}
   - component: {fileID: 8170422968629860016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Uykulu
   m_TagString: Enemy
   m_Icon: {fileID: 0}
