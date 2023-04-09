@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     GameManager gameManager;
     Camera mainCamera;
 
+ 
+
     float xSpeed;
     void Start()
     {
