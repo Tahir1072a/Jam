@@ -280,11 +280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kitaplar\u0131m\u0131z\u0131 bulmam\u0131z gerekiyor.Bunun i\xE7in sana
-    ihtiyac\u0131m\u0131z var.\xD6ncelikle sana zarar verecek k\xF6t\xFC duygular\u0131
-    yenmelisin.Her a\u015Famada bir kitab\u0131 bulacaks\u0131n.\xDC\xE7 kitab\u0131
-    bulursan oyunu kazan\u0131rs\u0131n.Dikkat et canavarlar\u0131n k\xF6t\xFC  duygular\u0131na
-    kap\u0131lma yoksa bulamazs\u0131n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -656,11 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kitaplar\u0131m\u0131z\u0131 bulmam\u0131z gerekiyor.Bunun i\xE7in sana
-    ihtiyac\u0131m\u0131z var.\xD6ncelikle sana zarar verecek k\xF6t\xFC duygular\u0131
-    yenmelisin.Her a\u015Famada bir kitab\u0131 bulacaks\u0131n.\xDC\xE7 kitab\u0131
-    bulursan oyunu kazan\u0131rs\u0131n.Dikkat et canavarlar\u0131n k\xF6t\xFC  duygular\u0131na
-    kap\u0131lma yoksa bulamazs\u0131n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1713,11 +1705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kitaplar\u0131m\u0131z\u0131 bulmam\u0131z gerekiyor.Bunun i\xE7in sana
-    ihtiyac\u0131m\u0131z var.\xD6ncelikle sana zarar verecek k\xF6t\xFC duygular\u0131
-    yenmelisin.Her a\u015Famada bir kitab\u0131 bulacaks\u0131n.\xDC\xE7 kitab\u0131
-    bulursan oyunu kazan\u0131rs\u0131n.Dikkat et canavarlar\u0131n k\xF6t\xFC  duygular\u0131na
-    kap\u0131lma yoksa bulamazs\u0131n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
