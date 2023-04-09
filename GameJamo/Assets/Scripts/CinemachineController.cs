@@ -9,12 +9,16 @@ public class CinemachineController : MonoBehaviour
 
     CinemachineVirtualCamera cam;
 
+    private GameObject player;
+
     [SerializeField] float shakeAmount = 1f;
 
     void Start() 
     {
         Instance = this;
         cam = GetComponent<CinemachineVirtualCamera>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        cam.Follow = player.transform;
     }
 
     public void startShake()
