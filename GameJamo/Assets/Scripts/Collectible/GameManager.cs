@@ -9,7 +9,7 @@ using static MusicSO;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Oyuncu Çantasý")]
+    [Header("Oyuncu ï¿½antasï¿½")]
     [SerializeField] short pageNum;
     [SerializeField] short bombaNum;
     [Header("UI")]
@@ -40,6 +40,13 @@ public class GameManager : MonoBehaviour
         UpdatePageView();
         UpdateBombaView();
         PlayMainMusic(AuidioTypes.MainGameMusic);
+    }
+    private void Update() 
+    {
+        if (pageNum == 3)
+        {
+            this.LoadGameOverScene();
+        }
     }
     public void ReduceEnergy()
     {
