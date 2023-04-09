@@ -1,31 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using static UnityEngine.InputSystem.HID.HID;
+using UnityEngine.UI;
 
 public class IntroScript : MonoBehaviour
 {
     public TextMeshProUGUI mainText;
+    [SerializeField] TextMeshProUGUI buttonText;
 
-    public Button button; 
     private int basmaSayisi = 0;
-    // Start is called before the first frame update
-    
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    private void Update()
+    public void OnClick()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Next();
-        }
+        Next();
     }
 
     void Next()
@@ -53,9 +40,10 @@ public class IntroScript : MonoBehaviour
                     "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
                      "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
                      "duygularýna kapýlma yoksa bulamazsýn";
+                buttonText.text = "Start";
                 break;
             case 4:
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(2);
                 break;
             default:
                 break;
