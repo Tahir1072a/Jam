@@ -1,23 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
+    [Header("Animator")]
     public Animator animator;
     Vector2 moveInput;
-
+    [Header("Fire")]
+    public Transform namlu, mermi, nokta;
+    Transform klonBullet;
+    [SerializeField] float bulletSpeed = 100f;
+    [Header("Movement")]
     public bool invert = false;
-
     [SerializeField] public float moveSpeed = 5f;
 
+
+    PlayerInput playerInput;
+    GameManager gameManager;
 
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerInput = GetComponent<PlayerInput>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
     void FixedUpdate()
     {
@@ -27,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         FlipSprite();
         UpdateAnimate();
+        Die();
     }
     void OnMove(InputValue value)
     {
@@ -72,8 +83,25 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    public void Die()
+    {
+        if(!gameManager.isDead)
+        {
+            return;
+        }
+        gameManager.isDead = false;
+        animator.SetTrigger("isDead");
+        playerInput.DeactivateInput();
+    }
     void OnShoot()
     {
-        Debug.Log("a");
+        animator.SetTrigger("isFire");
+        Debug.Log("Space basildi");
+        klonBullet = Instantiate(mermi, nokta.position, namlu.rotation);
+        //klon.GetComponent<Rigidbody2D>().AddForce(klon.forward * 1000f);
+
+        Rigidbody2D klonRigidbody = klonBullet.GetComponent<Rigidbody2D>();
+        klonBullet.GetComponent<Rigidbody2D>().AddForce(-namlu.right * bulletSpeed);
+        //klonRigidbody.AddForce(klon.transform.right * 10f);
     }
 }

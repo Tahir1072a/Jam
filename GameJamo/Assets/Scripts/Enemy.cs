@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
 
     [SerializeField] public EnemySO enemySO;
 

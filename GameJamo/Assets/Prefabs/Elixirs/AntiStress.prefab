@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2640278353350109096}
   - component: {fileID: 7238503584922663790}
-  - component: {fileID: -8334719656147221011}
-  m_Layer: 0
+  - component: {fileID: -5105714343669820903}
+  - component: {fileID: 2473929494084104300}
+  m_Layer: 11
   m_Name: AntiStress
-  m_TagString: Untagged
+  m_TagString: Sticker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -546257521
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b6e153f1d1a5145208cc3f6395c3cafb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8334719656147221011
+--- !u!114 &-5105714343669820903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +95,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 4221631957323778843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c1b56b8a8661e489f13f381c65e53b, type: 3}
+  m_Script: {fileID: 11500000, guid: fe9d1559a23fbc946a735e0135a42225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickerSO: {fileID: 11400000, guid: 2714723194a5a94438eb82cec91f7fd4, type: 2}
+  stickerSO: {fileID: 11400000, guid: d2dbb58435730424ca4a6d9eeab8147e, type: 2}
+--- !u!61 &2473929494084104300
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221631957323778843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
