@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6294945846826319561}
   - component: {fileID: 520869393288873807}
   - component: {fileID: 5762653765902040111}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Deli
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
 {
     [Header("Oyuncu Çantasý")]
     [SerializeField] short pageNum;
-    [SerializeField] short bulletNum;
     [SerializeField] short bombaNum;
     [Header("UI")]
     [SerializeField] TextMeshProUGUI pageText;

@@ -14,12 +14,12 @@ public class BulletControl : MonoBehaviour
             collision.GetComponent<Enemy>().enemyDead();
             Destroy(gameObject);
         }
-        
+
     }
     private void Update()
     {
         timer -= Time.deltaTime;
-        if(timer < 0)
+        if (timer < 0)
         {
             Destroy(gameObject);
         }
