@@ -49,6 +49,10 @@ public class TriggerController : MonoBehaviour
                     Debug.Log("Ates etme hizi dusecek");
                     break;
             }
+
+            collision.GetComponent<Enemy>().enemyDead();
+            
+
             playerMovement.animator.SetTrigger("isHurt");
             gameManager.ReduceEnergy();
         }
@@ -82,8 +86,10 @@ public class TriggerController : MonoBehaviour
                     Debug.Log("Ates etme hizi normale donecek");
                     break;
             }
+
+            Destroy(collision.gameObject);
         }
 
-        Destroy(collision.gameObject);
+        
     }
 }
