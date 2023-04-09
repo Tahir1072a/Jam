@@ -38,22 +38,18 @@ public class IntroScript : MonoBehaviour
         {
             case 1:
                 
-                mainText.text = "Hikaye" +
-                    "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
-                     "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
-                     "duygularýna kapýlma yoksa bulamazsýn";
+                mainText.text = "Oyunda seni zorlu bir yolculuk bekliyor. Yapman gereken, sana zarar vermek i?in etrafta dola?an " +
+                    "bu k?t? duygularla sava?mak ve motivasyonunu y?ksek tutarak Akademi'deki ?? kitab? bulmak!";
                 break;
             case 2:
-                mainText.text = "Oynanýþ" +
-                    "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
-                     "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
-                     "duygularýna kapýlma yoksa bulamazsýn";
+                mainText.text = "Ba?ar?l? olmak i?in cesaretin ve g??l? bir motivasyonun olmas? gerekiyor. Unutma, " +
+                    "her ba?ar? seni daha da g??l? k?lacak ve motivasyonunu art?racak. Sen de bu zorlu m?cadeleyi kazanmak i?in haz?rsan, haydi ba?layal?m!";
                 break;
             case 3:
                 mainText.text = "Canavar" +
-                    "Kitaplarýmýzý bulmamýz gerekiyor.Bunun için sana ihtiyacýmýz var.Öncelikle sana zarar verecek kötü duygularý" +
-                     "yenmelisin.Her aþamada bir kitabý bulacaksýn.Üç kitabý bulursan oyunu kazanýrsýn.Dikkat et canavarlarýn kötü" +
-                     "duygularýna kapýlma yoksa bulamazsýn";
+                    "Kitaplar?m?z? bulmam?z gerekiyor.Bunun i?in sana ihtiyac?m?z var.?ncelikle sana zarar verecek k?t? duygular?" +
+                     "yenmelisin.Her a?amada bir kitab? bulacaks?n.?? kitab? bulursan oyunu kazan?rs?n.Dikkat et canavarlar?n k?t?" +
+                     "duygular?na kap?lma yoksa bulamazs?n";
                 buttonText.text = "Start";
                 break;
             case 4:
