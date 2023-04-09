@@ -4,12 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEngine.InputSystem.HID.HID;
 
 public class IntroScript : MonoBehaviour
 {
     public TextMeshProUGUI mainText;
-    public PlayerInput playerInput;
-    
+
+    public Button button; 
     private int basmaSayisi = 0;
     // Start is called before the first frame update
     
