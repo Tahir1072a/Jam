@@ -17,6 +17,7 @@ public class CinemachineController : MonoBehaviour
     {
         Instance = this;
         cam = GetComponent<CinemachineVirtualCamera>();
+        endShake();
         player = GameObject.FindGameObjectWithTag("Player");
         cam.Follow = player.transform;
     }

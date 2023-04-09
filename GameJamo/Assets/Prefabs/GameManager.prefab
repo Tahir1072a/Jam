@@ -53,6 +53,6 @@ MonoBehaviour:
   enerygBar: {fileID: 0}
   mainMusicSource: {fileID: 0}
   playerMusicSource: {fileID: 0}
-  musics: {fileID: 0}
+  musics: {fileID: 11400000, guid: 3792b8d8dabb683408554795a11bca6a, type: 2}
   amountOfDamage: 0.1
   isDead: 0
