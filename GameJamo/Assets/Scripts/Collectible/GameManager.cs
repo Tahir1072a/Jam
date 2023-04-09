@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         UpdatePageView();
         UpdateBombaView();
+        PlayMainMusic(AuidioTypes.MainGameMusic);
     }
     public void ReduceEnergy()
     {
