@@ -6,7 +6,6 @@ public class TriggerController : MonoBehaviour
 {
     PlayerMovement playerMovement;
     GameManager gameManager;
-    public int energy;
 
     void Start() 
     {

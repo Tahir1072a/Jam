@@ -97,11 +97,11 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetTrigger("isFire");
         Debug.Log("Space basildi");
-        klonBullet = Instantiate(mermi, nokta.position, namlu.rotation);
+        klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
         //klon.GetComponent<Rigidbody2D>().AddForce(klon.forward * 1000f);
 
         Rigidbody2D klonRigidbody = klonBullet.GetComponent<Rigidbody2D>();
-        klonBullet.GetComponent<Rigidbody2D>().AddForce(-namlu.right * bulletSpeed);
+        klonBullet.GetComponent<Rigidbody2D>().AddForce(transform.localScale.x * bulletSpeed * Vector2.one);
         //klonRigidbody.AddForce(klon.transform.right * 10f);
     }
 }
