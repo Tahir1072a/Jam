@@ -97,8 +97,8 @@ public class PlayerMovement : MonoBehaviour
         gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.DieSound);
         animator.SetTrigger("isDead");
         playerInput.DeactivateInput();
-        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        Invoke("LoadGameOverScene", 1.5f);
+        animator.enabled = false;
+        Invoke("LoadGameOverScene", 3f);
     }
     void LoadGameOverScene()
     {

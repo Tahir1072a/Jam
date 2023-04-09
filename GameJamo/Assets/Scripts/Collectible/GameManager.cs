@@ -105,7 +105,6 @@ public class GameManager : MonoBehaviour
     }
     public void LoadGameOverScene()
     {
-        //ilgili ekran hazýr olunca yazýlacak.
-        //SceneManager.LoadScene();
+        SceneManager.LoadScene(2);
     }
 }
