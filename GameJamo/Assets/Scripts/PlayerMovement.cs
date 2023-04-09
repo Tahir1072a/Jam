@@ -94,8 +94,14 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         gameManager.isDead = false;
+        gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.DieSound);
         animator.SetTrigger("isDead");
         playerInput.DeactivateInput();
+        Invoke("ConfigureActive", 1f);
+    }
+    void ConfigureActive()
+    {
+        gameObject.SetActive(false);
     }
     void OnShoot()
     {
@@ -104,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         animator.SetTrigger("isFire");
+        gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.FireSound);
         klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         mousePosition.z = 0;

@@ -16,6 +16,7 @@ public class CollectableBomba : MonoBehaviour
         if (collider2d.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             FindObjectOfType<GameManager>().IncreaseBombaNum();
+            FindObjectOfType<GameManager>().PlayPlayerMusic(MusicSO.AuidioTypes.BombCollectSound);
             Destroy(gameObject);
         }
     }

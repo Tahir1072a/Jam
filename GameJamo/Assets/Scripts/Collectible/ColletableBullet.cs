@@ -16,6 +16,7 @@ public class ColletableBullet : MonoBehaviour
         if (collider2d.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
             FindObjectOfType<GameManager>().IncreaseBulletNum();
+            FindObjectOfType<GameManager>().PlayPlayerMusic(MusicSO.AuidioTypes.BUlletCollectSound);
             Destroy(gameObject);
         }
     }

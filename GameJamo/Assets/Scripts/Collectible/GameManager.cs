@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static MusicSO;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI bulletText;
     [SerializeField] TextMeshProUGUI bombaText;
     [SerializeField] Image enerygBar;
+    [Header("AudioSources")]
+    [SerializeField] AudioSource mainMusicSource;
+    [SerializeField] AudioSource playerMusicSource;
+    [SerializeField] MusicSO musics;
 
     [SerializeField] float amountOfDamage = 0.1f;
     public bool isDead = false;
@@ -107,5 +113,13 @@ public class GameManager : MonoBehaviour
     public short ShowBombNum()
     {
         return bombaNum;
+    }
+    public void PlayPlayerMusic(MusicSO.AuidioTypes auidioType)
+    {
+       // playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips);
+    }
+    public void PlayMainMusic(MusicSO.AuidioTypes audioType)
+    {
+       // mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips);
     }
 }
