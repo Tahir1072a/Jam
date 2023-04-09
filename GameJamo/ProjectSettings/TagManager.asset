@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - StoryMusic
   - PlayerMusic
+  - PlayerSound
+  - MainCameraSound
+  - Point
   layers:
   - Default
   - TransparentFX
