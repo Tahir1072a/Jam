@@ -52,8 +52,7 @@ public class TriggerController : MonoBehaviour
             collision.GetComponent<Enemy>().enemyDead();
             
             playerMovement.animator.SetTrigger("isHurt");
-            //Sesler seçilince açılacak.
-            //gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.HurtSound);
+            gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.HurtSound);
             //Her kötü olay karakterin canını 0.1 azaltır. Not: Karakterin enerji miktarı 1 dir.
             gameManager.ReduceEnergy();
         }
@@ -90,7 +89,6 @@ public class TriggerController : MonoBehaviour
                     Debug.Log("Ates etme hizi normale donecek");
                     break;
             }
-            //Sesler seçilince açılacak.
             gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.ElixirSound);
             Destroy(collision.gameObject);
         }

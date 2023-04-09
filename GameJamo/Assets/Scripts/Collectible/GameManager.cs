@@ -116,10 +116,10 @@ public class GameManager : MonoBehaviour
     }
     public void PlayPlayerMusic(MusicSO.AuidioTypes auidioType)
     {
-        playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips);
+       // playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips);
     }
     public void PlayMainMusic(MusicSO.AuidioTypes audioType)
     {
-        mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips);
+       // mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips);
     }
 }
