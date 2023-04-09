@@ -9,12 +9,10 @@ using static MusicSO;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Oyuncu �antas�")]
-    [SerializeField] short pageNum;
-    [SerializeField] short bombaNum;
+    [Header("Oyuncu Çantası")]
+    [SerializeField] public short pageNum;
     [Header("UI")]
     [SerializeField] TextMeshProUGUI pageText;
-    [SerializeField] TextMeshProUGUI bombaText;
     [SerializeField] Image enerygBar;
     [SerializeField] public Image reloadImage;
     [Header("AudioSources")]
@@ -38,7 +36,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdatePageView();
-        UpdateBombaView();
         PlayMainMusic(AuidioTypes.MainGameMusic);
     }
     private void Update() 
@@ -76,40 +73,22 @@ public class GameManager : MonoBehaviour
     {
         pageText.text = pageNum.ToString();
     }
-    public void UpdateBombaView()
-    {
-        bombaText.text = bombaNum.ToString();
-    }
     public void IncreasePageNum()
     {
         pageNum++;
         UpdatePageView();
     }
-    public void IncreaseBombaNum()
-    {
-        bombaNum++;
-        UpdateBombaView();
-    }
-    public void ReduceBombNum()
-    {
-        bombaNum--;
-        UpdateBombaView();
-    }
     public short ShowPageNum()
     {
         return pageNum;
     }
-    public short ShowBombNum()
-    {
-        return bombaNum;
-    }
     public void PlayPlayerMusic(MusicSO.AuidioTypes auidioType)
     {
-       playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips);
+       playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips,0.5f);
     }
     public void PlayMainMusic(MusicSO.AuidioTypes audioType)
     {
-       mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips);
+       mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips,0.5f);
     }
     public void LoadGameOverScene()
     {

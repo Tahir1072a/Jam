@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class IntroScript : MonoBehaviour
 {
     public TextMeshProUGUI mainText;
     [SerializeField] TextMeshProUGUI buttonText;
+    [SerializeField] TextMeshProUGUI puanText;
     [SerializeField] Image[] panels; 
     private int basmaSayisi = 0;
     SoundSource soundSource;
@@ -15,11 +17,15 @@ public class IntroScript : MonoBehaviour
     {
         soundSource = FindFirstObjectByType<SoundSource>();
         gameManager = FindAnyObjectByType<GameManager>();
+        puanText = FindObjectsOfType<TextMeshProUGUI>().FirstOrDefault(p => p.tag == "Point");
     }
     private void Start()
     {
         soundSource.PlayMainMusic(MusicSO.AuidioTypes.MainStoryMusic);
-        Debug.Log(soundSource);
+        if(puanText != null)
+        {
+            puanText.text = "Puan: " + (gameManager.pageNum * 100).ToString();
+        }
     }
     public void OnClick()
     {
