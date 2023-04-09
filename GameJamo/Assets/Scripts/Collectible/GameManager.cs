@@ -84,11 +84,11 @@ public class GameManager : MonoBehaviour
     }
     public void PlayPlayerMusic(MusicSO.AuidioTypes auidioType)
     {
-       playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips,0.5f);
+       playerMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == auidioType).audioClips,0.3f);
     }
     public void PlayMainMusic(MusicSO.AuidioTypes audioType)
     {
-       mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips,0.5f);
+       mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips,0.3f);
     }
     public void LoadGameOverScene()
     {
