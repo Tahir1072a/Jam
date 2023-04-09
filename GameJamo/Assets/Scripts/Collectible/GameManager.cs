@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static MusicSO;
 
@@ -14,7 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] short bombaNum;
     [Header("UI")]
     [SerializeField] TextMeshProUGUI pageText;
-    [SerializeField] TextMeshProUGUI bulletText;
     [SerializeField] TextMeshProUGUI bombaText;
     [SerializeField] Image enerygBar;
     [Header("AudioSources")]
@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdatePageView();
-        UpdateBulletView();
         UpdateBombaView();
     }
     public void ReduceEnergy()
@@ -69,10 +68,6 @@ public class GameManager : MonoBehaviour
     {
         pageText.text = pageNum.ToString();
     }
-    public void UpdateBulletView()
-    {
-        bulletText.text = bulletNum.ToString();
-    }
     public void UpdateBombaView()
     {
         bombaText.text = bombaNum.ToString();
@@ -82,29 +77,15 @@ public class GameManager : MonoBehaviour
         pageNum++;
         UpdatePageView();
     }
-    public void IncreaseBulletNum()
-    {
-        bulletNum++;
-        UpdateBulletView();
-    }
     public void IncreaseBombaNum()
     {
         bombaNum++;
         UpdateBombaView();
     }
-    public void ReduceBulletNum()
-    {
-        bulletNum--;
-        UpdateBulletView();
-    }
     public void ReduceBombNum()
     {
         bombaNum--;
         UpdateBombaView();
-    }
-    public short ShowBulletNum()
-    {
-        return bulletNum;
     }
     public short ShowPageNum()
     {
@@ -121,5 +102,10 @@ public class GameManager : MonoBehaviour
     public void PlayMainMusic(MusicSO.AuidioTypes audioType)
     {
        // mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips);
+    }
+    public void LoadGameOverScene()
+    {
+        //ilgili ekran hazýr olunca yazýlacak.
+        //SceneManager.LoadScene();
     }
 }
