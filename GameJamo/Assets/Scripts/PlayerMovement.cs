@@ -110,12 +110,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void ConfigureFireDelay()
     {
-        fireTimer -= Time.deltaTime;
         gameManager.UpdateViewReloadImage(fireDelay,timerMultiplier);
     }
     void OnShoot()
     {
-        if(fireTimer > Mathf.Epsilon)
+        if(gameManager.reloadImage.fillAmount < 1)
         {
             return;
         }

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI pageText;
     [SerializeField] TextMeshProUGUI bombaText;
     [SerializeField] Image enerygBar;
-    [SerializeField] Image reloadImage;
+    [SerializeField] public Image reloadImage;
     [Header("AudioSources")]
     [SerializeField] AudioSource mainMusicSource;
     [SerializeField] AudioSource playerMusicSource;
