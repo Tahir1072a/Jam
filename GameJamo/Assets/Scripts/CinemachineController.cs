@@ -9,6 +9,8 @@ public class CinemachineController : MonoBehaviour
 
     CinemachineVirtualCamera cam;
 
+    [SerializeField] float shakeAmount = 1f;
+
     void Start() 
     {
         Instance = this;
@@ -17,7 +19,7 @@ public class CinemachineController : MonoBehaviour
 
     public void startShake()
     {
-        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 1f;
+        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shakeAmount;
     }
 
     public void endShake()
