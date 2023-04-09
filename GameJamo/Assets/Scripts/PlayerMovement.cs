@@ -97,18 +97,15 @@ public class PlayerMovement : MonoBehaviour
         gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.DieSound);
         animator.SetTrigger("isDead");
         playerInput.DeactivateInput();
-        Invoke("ConfigureActive", 1f);
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        Invoke("LoadGameOverScene", 1.5f);
     }
-    void ConfigureActive()
+    void LoadGameOverScene()
     {
-        gameObject.SetActive(false);
+        gameManager.LoadGameOverScene();
     }
     void OnShoot()
     {
-        if(gameManager.ShowBulletNum() == 0)
-        {
-            return;
-        }
         animator.SetTrigger("isFire");
         gameManager.PlayPlayerMusic(MusicSO.AuidioTypes.FireSound);
         klonBullet = Instantiate(mermi, nokta.position, Quaternion.identity);
@@ -120,6 +117,5 @@ public class PlayerMovement : MonoBehaviour
             shootingDirection.x = transform.localScale.x;
         }
         klonBullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
-        gameManager.ReduceBulletNum();
     }
 }
