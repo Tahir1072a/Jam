@@ -24,6 +24,11 @@ public class IntroScript : MonoBehaviour
         soundSource.PlayMainMusic(MusicSO.AuidioTypes.MainStoryMusic);
         if(puanText != null)
         {
+            if(gameManager.pageNum == 3)
+            {
+                puanText.text = "Kazandýn Puan: " + (gameManager.pageNum * 100).ToString();
+                return;
+            }
             puanText.text = "Puan: " + (gameManager.pageNum * 100).ToString();
         }
     }
