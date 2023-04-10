@@ -2779,7 +2779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bu biterse sende bitersen
+  m_text: Bu biterse sen de bitersen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
   m_sharedMaterial: {fileID: -5272684725201985703, guid: cc568b5fc38774d858f4939fdccb3695, type: 2}
