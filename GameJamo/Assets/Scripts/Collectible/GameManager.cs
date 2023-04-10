@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     }
     public void PlayMainMusic(MusicSO.AuidioTypes audioType)
     {
-       //mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips,0.3f);
+       mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p => p.type == audioType).audioClips,0.3f);
     }
     public void LoadGameOverScene()
     {

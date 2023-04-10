@@ -15,6 +15,6 @@ public class SoundSource : MonoBehaviour
     }
     public void PlayMainMusic(MusicSO.AuidioTypes auidioTypes)
     {
-        //mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p=> p.type == auidioTypes).audioClips);
+        mainMusicSource.PlayOneShot(musics.audioClips.FirstOrDefault(p=> p.type == auidioTypes).audioClips);
     }
 }
